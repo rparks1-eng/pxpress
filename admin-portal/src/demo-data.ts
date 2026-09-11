@@ -1,0 +1,14 @@
+import type { AuditEvent, RideRequest } from './types';
+
+export const demoRequests: RideRequest[] = [
+  { id:'req-1048',customerId:'customer-jordan',requestNumber:'PXR-1048',status:'new',createdAt:'2026-08-29T13:18:00Z',customerName:'Jordan Ellis',email:'jordan@example.com',phone:'(216) 555-0137',service:'airport',tripType:'One way',pickupAddress:'Shaker Heights, OH',destinationAddress:'Cleveland Hopkins International Airport',pickupDate:'2026-09-02',pickupTime:'07:15',airport:'CLE',passengers:2,carryons:2,checkedBags:1,hasOversizedItems:false,customerNotes:'Early pickup; text on arrival.',pricingStatus:'configuration-required',paymentStatus:'not_requested' },
+  { id:'req-1047',customerId:'customer-morgan',requestNumber:'PXR-1047',status:'quote_ready',createdAt:'2026-08-29T11:02:00Z',customerName:'Morgan Blake',email:'morgan@example.com',phone:'(330) 555-0192',service:'hourly',tripType:'Hourly',pickupAddress:'Akron, OH',destinationAddress:'Cleveland, OH',pickupDate:'2026-09-06',pickupTime:'17:00',passengers:4,carryons:0,checkedBags:0,hasOversizedItems:false,ownerNotes:'Four-hour minimum discussed.',quoteAmount:340,pricingStatus:'calculated',paymentStatus:'not_requested' },
+  { id:'req-1046',customerId:'customer-avery',requestNumber:'PXR-1046',status:'confirmed',createdAt:'2026-08-28T19:40:00Z',customerName:'Avery Cole',email:'avery@example.com',phone:'(440) 555-0164',service:'events',tripType:'Round trip',pickupAddress:'Beachwood, OH',destinationAddress:'Playhouse Square, Cleveland, OH',returnAddress:'Beachwood, OH',pickupDate:'2026-09-12',pickupTime:'18:15',returnDate:'2026-09-12',returnTime:'23:15',passengers:3,carryons:0,checkedBags:0,hasOversizedItems:false,quoteAmount:225,pricingStatus:'calculated',paymentStatus:'paid' },
+  { id:'req-1045',customerId:'customer-jordan',requestNumber:'PXR-1045',status:'completed',createdAt:'2026-08-24T15:00:00Z',customerName:'Jordan Ellis',email:'jordan@example.com',phone:'(216) 555-0137',service:'appointment',tripType:'Round trip',pickupAddress:'Shaker Heights, OH',destinationAddress:'Cleveland Clinic, Cleveland, OH',returnAddress:'Shaker Heights, OH',pickupDate:'2026-08-27',pickupTime:'09:00',returnDate:'2026-08-27',returnTime:'12:30',passengers:1,carryons:0,checkedBags:0,hasOversizedItems:false,quoteAmount:148,pricingStatus:'calculated',paymentStatus:'paid' }
+];
+
+export const demoEvents: AuditEvent[] = [
+  {id:'ev-1',requestId:'req-1048',at:'2026-08-29T13:18:00Z',actor:'Website form',action:'Request received',detail:'Airport transfer request captured.'},
+  {id:'ev-2',requestId:'req-1047',at:'2026-08-29T11:20:00Z',actor:'Owner',action:'Quote prepared',detail:'Quote set to $340.00.'},
+  {id:'ev-3',requestId:'req-1046',at:'2026-08-29T09:30:00Z',actor:'Owner',action:'Ride confirmed',detail:'Deposit payment verified.'}
+];

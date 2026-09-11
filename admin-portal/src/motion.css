@@ -1,0 +1,61 @@
+/* Owner Desk: quick tactile controls, restrained arrivals, no delayed actions. */
+:root {
+  --desk-ease: cubic-bezier(.22, 1, .36, 1);
+  --desk-fast: 160ms;
+  --desk-arrive: 340ms;
+}
+.button, .request-action, .row-link, .sidebar nav a, .mobile-nav a,
+.owner-banner-actions a, .owner-banner-actions button {
+  transition: background-color var(--desk-fast) ease, color var(--desk-fast) ease,
+    border-color var(--desk-fast) ease, box-shadow var(--desk-fast) ease,
+    transform var(--desk-fast) var(--desk-ease);
+  -webkit-tap-highlight-color: transparent;
+}
+.button:active:not(:disabled), .request-action:active:not(:disabled),
+.row-link:active, .mobile-nav a:active { transform: translateY(1px) scale(.985); }
+.button:focus-visible, .request-action:focus-visible, .row-link:focus-visible,
+.sidebar nav a:focus-visible, .mobile-nav a:focus-visible {
+  outline: 2px solid var(--gold-hi, #e4c687);
+  outline-offset: 4px;
+}
+input, select, textarea {
+  transition: border-color var(--desk-fast) ease, box-shadow var(--desk-fast) ease;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201,163,92,.12);
+}
+#main-content > .page { animation: desk-page-arrive var(--desk-arrive) var(--desk-ease); }
+.price-dialog[open], dialog[open] { animation: desk-dialog-arrive 240ms var(--desk-ease); }
+dialog::backdrop { background: rgba(0,0,0,.72); animation: desk-backdrop-arrive 180ms ease; }
+.owner-banner { animation: desk-banner-arrive 300ms var(--desk-ease); }
+.sidebar nav a.active, .mobile-nav a.active {
+  background-color: rgba(201,163,92,.10);
+  color: var(--gold-hi, #e4c687);
+}
+@media (hover:hover) and (pointer:fine) {
+  .button:hover:not(:disabled), .request-action:hover:not(:disabled), .row-link:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 18px rgba(0,0,0,.18);
+  }
+}
+@keyframes desk-page-arrive { from { opacity:.65; } to { opacity:1; } }
+@keyframes desk-dialog-arrive {
+  from { opacity:0; transform:translateY(8px) scale(.985); }
+  to { opacity:1; transform:none; }
+}
+@keyframes desk-banner-arrive {
+  from { opacity:0; transform:translateY(-10px); }
+  to { opacity:1; transform:none; }
+}
+@keyframes desk-backdrop-arrive { from { opacity:0; } to { opacity:1; } }
+@media (prefers-reduced-motion:reduce) {
+  #main-content > .page, .owner-banner, dialog[open], .price-dialog[open], dialog::backdrop {
+    animation:none;
+  }
+  .button, .request-action, .row-link, .sidebar nav a, .mobile-nav a,
+  .owner-banner-actions a, .owner-banner-actions button, input, select, textarea {
+    transition:none;
+  }
+  .button, .request-action, .row-link, .mobile-nav a { transform:none !important; }
+}

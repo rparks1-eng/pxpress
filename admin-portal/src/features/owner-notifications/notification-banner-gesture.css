@@ -1,0 +1,4 @@
+.owner-banner.owner-banner-swipe{touch-action:pan-x pinch-zoom;transform:translateY(var(--banner-swipe-y,0px));opacity:var(--banner-swipe-opacity,1);transition:transform 160ms ease-out,opacity 160ms ease-out}
+.owner-banner.owner-banner-swipe.is-swiping{transition:none;user-select:none}
+.owner-banner-actions a:focus-visible,.owner-banner-actions button:focus-visible{outline:2px solid var(--notice-color);outline-offset:2px;border-radius:6px}
+@media(prefers-reduced-motion:reduce){.owner-banner.owner-banner-swipe{transform:none;opacity:1;transition:none}}

@@ -1,0 +1,27 @@
+/* Touch workspace: rows open records; decisions belong inside the record. */
+.owner-desk .touch-requests-page .page-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.owner-desk .touch-requests-page h1{font:600 30px/1.2 'DM Sans',sans-serif;letter-spacing:-.8px}
+.touch-request-search{display:flex;align-items:center;gap:10px;border:0;border-radius:12px;background:#ffffff08;padding:0 14px;min-height:46px;margin-bottom:10px}
+.touch-request-search svg{position:static;flex:0 0 18px;width:18px;color:#aaa69d}.touch-request-search input{width:100%;min-width:0;min-height:46px;border:0;background:none;color:#f3efe7;font:400 15px 'DM Sans',sans-serif;outline:none}
+.touch-request-search:focus-within{outline:2px solid #dec393;outline-offset:2px}
+.owner-desk .touch-requests-page .desk-view-switch{margin-bottom:0;gap:25px}.touch-service-filter{display:flex;align-items:center;gap:14px;font-size:13px;margin:14px 0}.touch-service-filter select{min-height:44px;background:#151817;border:1px solid #ffffff20;border-radius:9px;color:#eee;padding:8px}
+.owner-desk .touch-request-list{display:block;margin:0;padding:0;list-style:none}
+.owner-desk .touch-request-list>li{display:block;padding:0;border:0;border-bottom:1px solid #ffffff12;background:none}
+.touch-request-row{display:grid;grid-template-columns:minmax(0,1fr) 18px;gap:16px;align-items:center;padding:22px 0;text-decoration:none;color:#f3efe7;min-height:110px}
+.touch-request-row:hover{background:#ffffff03}.touch-request-row:active{background:#ffffff07}
+.touch-request-title time{color:#e1c799;font-size:15px;font-weight:500;white-space:nowrap;font-variant-numeric:tabular-nums}
+.touch-request-content{min-width:0}.touch-request-title{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.owner-desk .touch-request-title h2{font:500 18px/1.3 'DM Sans',sans-serif;margin:0;overflow-wrap:anywhere;letter-spacing:-.25px}
+.touch-request-state{font-size:11px;color:#c8b58d;white-space:nowrap}.touch-request-state.state-confirmed,.touch-request-state.state-completed{color:#afc2a9}
+.touch-request-content p{margin:5px 0 0;font-size:13px;line-height:1.4;color:#b5b1a7}.touch-request-content .touch-request-address{color:#898b85;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.touch-request-row>svg{width:18px;color:#8f938a}
+.touch-request-route{margin:12px 0 10px;padding-left:13px;border-left:1px solid #dec39340;display:grid;gap:6px}.touch-request-content .touch-request-route p{margin:0;line-height:1.4;font-size:13px;color:#d1cec5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.touch-request-content .touch-request-route p:last-child{color:#a7a79e}
+.owner-desk .notification-list>li{position:relative;gap:14px;padding:0;display:flex;align-items:center;background:none;border:0;border-bottom:1px solid #ffffff12}
+.notification-row-link{display:flex;align-items:flex-start;gap:13px;flex:1;min-width:0;padding:20px 0;text-decoration:none;color:inherit}
+.notification-row-link .notification-copy{min-width:0}.notification-row-link .notification-mark{flex:0 0 26px;padding-top:3px;background:none;border:0}
+.owner-desk .notification-title strong{font:500 15px/1.4 'DM Sans',sans-serif}.owner-desk .notification-copy p{font-size:13px;line-height:1.5;color:#aaa69d}
+.owner-desk .notification-actions{padding:0;flex:0 0 40px}.owner-desk .notification-actions button{width:40px;min-height:44px;background:none;border:0;padding:0;color:#aaa69d;border-radius:50%}.notification-actions button svg{width:17px}
+.owner-desk .notification-meta{font-size:10px;gap:10px}.owner-desk .notification-meta time{font-size:10px}.owner-desk .notification-meta time svg{display:none}
+.owner-desk .notification-head h1{font:600 30px/1.2 'DM Sans',sans-serif}.owner-desk .page-head>div>p:not(.desk-greeting):not(.eyebrow){max-width:600px;font-size:14px;line-height:1.5}
+.owner-desk .more-links a{background:none;border-radius:0;min-height:80px;padding:16px 0}.owner-desk .more-links strong{font-size:16px}.owner-desk .more-links small{font-size:12px;line-height:1.4}
+@media(max-width:720px){.owner-desk .touch-requests-page{padding:16px 20px 32px}.owner-desk .touch-requests-page h1{font-size:27px}.touch-request-row{grid-template-columns:minmax(0,1fr) 14px;gap:10px;padding:20px 0;min-height:116px}.touch-request-title{align-items:baseline;flex-direction:row;gap:12px}.owner-desk .touch-request-title h2{font-size:17px}.touch-request-title time{font-size:14px}.touch-request-content p{font-size:12px}.touch-request-state{font-size:12px}.touch-request-content .touch-request-address{font-size:12px}.owner-desk .notification-list>li{gap:5px}.notification-row-link{gap:10px}.notification-row-link .notification-mark{flex-basis:20px}.owner-desk .notification-title strong{font-size:14px}.owner-desk .notification-copy p{font-size:13px}.owner-desk .notification-head{gap:12px}.owner-desk .notification-head h1{font-size:27px}.owner-desk .notification-page-actions{justify-content:space-between;width:100%}.owner-desk .notification-toolbar{gap:12px}.owner-desk .notification-toolbar nav{gap:16px}.owner-desk .notification-toolbar nav button{font-size:12px}.owner-desk .more-links{grid-template-columns:1fr}.owner-desk .more-page .page-head h1{font-size:27px}}
