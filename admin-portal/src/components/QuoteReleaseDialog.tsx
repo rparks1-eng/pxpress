@@ -1,0 +1,18 @@
+import { Mail,Send,X } from 'lucide-react';
+import { useEffect,useId,useRef,useState } from 'react';
+import type { RideRequest } from '../types';
+import { formatDate,formatMoney,formatTime } from '../lib/selectors';
+import { serviceLabels } from './RequestTable';
+
+type Props={recovery?:boolean;request:RideRequest;busy:boolean;onDismiss:()=>void;onEdit:()=>void;onRelease:()=>Promise<void>};
+
+/** A deliberate final owner review. Opening this view never sends anything. */
+export function QuoteReleaseDialog({request,recovery=false,busy,onDismiss,onEdit,onRelease}:Props){
+  const ref=useRef<HTMLDialogElement>(null),id=useId(),[error,setError]=useState('');
+  const attempted=useRef(false),[submitted,setSubmitted]=useState(false);
+  const draft=request.manualQuoteDraft;
+  useEffect(()=>{ref.current?.showModal?.()},[]);
+  async function submit(event:React.FormEvent){event.preventDefault();if(busy||attempted.current||!ready)return;attempted.current=true;setSubmitted(true);setError('');try{await onRelease()}catch{setError('Release outcome unknown. Email: NOT SENT (delivery unconfirmed). Reconcile before retrying.')}}
+  const ready=Boolean(draft?.isCurrent&&draft.quoteId);
+  return <dialog ref={ref} className="price-dialog quote-release-dialog" aria-labelledby={id} onCancel={event=>{event.preventDefault();if(!busy)onDismiss()}}><form onSubmit={submit}><header><div><p className="eyebrow">Final review</p><h2 id={id}>{recovery?'Review saved quote':'Review quote before sending'}</h2></div><button type="button" className="dialog-close" onClick={onDismiss} disabled={busy} aria-label="Close quote review"><X aria-hidden/></button></header><p className="dialog-lede">{recovery?'The previous sending window ended. Confirm the same recipient and total to resume this quote. Nothing is sent just by opening this review.':'Review the ride, recipient, and final inclusive total. Saving a quote never sends it.'}</p><dl className="facts quote-release-summary"><div><dt>Customer</dt><dd>{request.customerName}</dd></div><div><dt>Email</dt><dd>{request.email}</dd></div><div><dt>Ride</dt><dd>{serviceLabels[request.service]} · {formatDate(request.pickupDate)}{request.pickupTime?` · ${formatTime(request.pickupTime)}`:''}</dd></div><div><dt>Route</dt><dd>{request.pickupAddress} → {request.destinationAddress||request.airport||'Destination to be confirmed'}</dd></div><div><dt>Service</dt><dd>{formatMoney((draft?.serviceSubtotalMinor||0)/100)}</dd></div><div><dt>Included tax</dt><dd>{formatMoney((draft?.salesTaxMinor||0)/100)}{draft?` · ${(draft.rateBasisPoints/100).toFixed(2)}%`:''}</dd></div><div><dt>Customer total</dt><dd>{formatMoney((draft?.customerTotalMinor||0)/100)}</dd></div></dl>{ready?<p className="guard-note"><Mail aria-hidden/><span>Send quote asks the secure service to verify the current request, quote, recipient, owner, and payment-link gate. Acknowledgement is not a usable payment link, confirmed email delivery, payment, or ride confirmation.</span></p>:<p className="guard-note"><Mail aria-hidden/><span><strong>This draft needs refresh.</strong> Save a current quote before requesting release. Email: NOT SENT (delivery unconfirmed).</span></p>}{error&&<p role="alert" className="dialog-error">{error}</p>}<footer>{!recovery&&<button type="button" className="button secondary" onClick={onEdit} disabled={busy}>Edit</button>}<button className="button primary" disabled={busy||submitted||!ready} title={!ready?'Save a current quote before requesting release.':undefined}><Send aria-hidden/>{busy?'Requesting release…':submitted?'Awaiting reconciliation':recovery?'Confirm and continue':'Send quote'}</button></footer></form></dialog>;
+}

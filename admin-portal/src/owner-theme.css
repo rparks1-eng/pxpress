@@ -1,0 +1,228 @@
+/* Load after feature and Owner Desk styles. The light palette replaces legacy
+   dark surfaces explicitly, preserving semantic error and success treatments. */
+/* Explicit light-mode semantic colors for legacy components with fixed dark-mode ink. */
+html[data-owner-theme="light"] .owner-desk :is(h1,h2,h3,h4,.facts dd,.desk-day-summary strong,.desk-shortcuts a,.desk-decisions strong,.desk-run-sheet strong,.touch-request-row,.touch-request-title h2,.customer-card dd,.mileage-panel strong,.mileage-panel b){color:var(--ink)}
+html[data-owner-theme="light"] .owner-desk :is(.desk-clear-note,.desk-payment-note,.desk-next-empty p,.desk-decisions small,.desk-decisions span,.desk-run-sheet span,.desk-run-sheet small,.touch-request-content p,.touch-request-content .touch-request-address,.touch-request-route span,.touch-service-filter,.guard-note,.timeline span,.timeline p,.facts dt,.activity-list time,.activity-list>li>span,.owner-session>div,.more-links small,.mileage-panel p,.mileage-panel small,.mileage-panel span,.navigation-handoff-note){color:var(--muted)}
+html[data-owner-theme="light"] .owner-desk :is(.touch-request-title time,.touch-request-state,.desk-reminder-link,.touch-request-search svg){color:var(--gold-hi)}
+html[data-owner-theme="light"] .owner-desk :is(.touch-request-state.state-confirmed,.touch-request-state.state-completed){color:var(--success)}
+html[data-owner-theme="light"] .owner-desk :is(.touch-request-list>li,.notification-list>li,.touch-request-route){border-color:var(--line)}
+html[data-owner-theme="light"] .owner-desk :is(input,textarea)::placeholder{color:#59656a;opacity:1}
+html[data-owner-theme="light"] .owner-desk blockquote{background:#edf1f3;color:var(--ink)}
+html[data-owner-theme="light"] .owner-desk .button.accept{background:#e5f2e9;color:#205634;border-color:#648571}
+html[data-owner-theme="light"] .owner-desk .button.decline{background:#fae9e6;color:#912b24;border-color:#b78078}
+html[data-owner-theme="dark"]{color-scheme:dark}
+html[data-owner-theme="light"] .owner-desk :is(.navigation-launcher,.navigation-stop-list>button,.drive-directions,.drive-map-choices>a,.drive-glance,.drive-stage-card,.drive-telemetry){background:var(--panel);color:var(--ink);border-color:var(--line)}
+html[data-owner-theme="light"] .owner-desk .navigation-stop-index{background:var(--panel-hi);color:var(--gold-hi)}
+html[data-owner-theme="light"] .owner-desk :is(.navigation-handoff-note,.navigation-unavailable,.drive-directions-copy small,.drive-glance span){color:var(--muted)}
+html[data-owner-theme="light"]{color-scheme:light;background:#f4f6f7;color:#222c30;--ink:#222c30;--muted:#59656a;--panel:#fff;--panel-hi:#edf1f3;--line:#cad2d6;--line-gold:#aa864c;--gold:#785721;--gold-hi:#6b4918;--danger:#a63029;--success:#286441;--desk-surface:#f4f6f7;--desk-rule:#cbd3d7;--desk-gold:#785721}
+html[data-owner-theme="light"] body{background:#f4f6f7;color:var(--ink)}
+html[data-owner-theme="light"] .owner-desk{--desk-surface:#f4f6f7;--desk-rule:#cbd3d7;--desk-gold:#785721;background:var(--desk-surface);color:var(--ink)}
+html[data-owner-theme="light"] :is(.owner-desk .sidebar,.owner-desk .mobile-nav,.desk-toolbar,.desk-account-menu,.desk-peek-panel,.price-dialog,.modal,.drawer,.notification-settings-card,.calendar-guardrails,.directory-tools,.table-wrap,.control-card,.detail-card,.notification-install-note){background:var(--panel);color:var(--ink);border-color:var(--line);box-shadow:none}
+html[data-owner-theme="light"] .owner-desk :is(input,select,textarea){background-color:var(--panel);color:var(--ink);border-color:var(--line)}
+html[data-owner-theme="light"] .owner-desk :is(.button.secondary,.status){border-color:var(--line);color:var(--ink)}
+html[data-owner-theme="light"] .owner-desk .button.primary{background:#785721;border-color:#785721;color:#fff}
+html[data-owner-theme="light"] .owner-desk :is(.sidebar nav a,.mobile-nav a,.sidebar-brand p,.owner-session small,.signout-button,.desk-workspace-label,.desk-greeting,.desk-today-date,.desk-day-summary span,.desk-next-heading>span,.desk-next-heading small,.desk-journey-route span,.desk-account-menu small,.desk-view-switch button,.desk-feedback-list time,.desk-feedback-list footer,.desk-message-journey p,.desk-message-journey li span,.desk-feedback-empty p,.as-of,.facts dt,.route span,td small,th,td::before){color:var(--muted)}
+html[data-owner-theme="light"] .owner-desk :is(.sidebar nav a.active,.mobile-nav a.active,.desk-view-switch button[aria-pressed=true]){color:var(--desk-gold);background:#7857210c}
+html[data-owner-theme="light"] .owner-desk :is(td,.desk-account-menu a,.desk-account-menu button,.desk-notification-bell,.desk-peek-panel header button,.desk-peek-panel li a,.desk-peek-panel li strong,.desk-request-route,.desk-request-contact,.notification-copy strong,.owner-banner-copy strong){color:var(--ink)}
+html[data-owner-theme="light"] .owner-desk :is(.desk-peek-panel li small,.desk-peek-panel li.is-read strong,.notification-copy p,.notification-copy small,.owner-banner-copy p){color:var(--muted)}
+html[data-owner-theme="light"] .owner-desk :is(.desk-journey-route li::before,.followup-choice label,.owner-banner){background:var(--panel)}
+html[data-owner-theme="light"] .owner-desk :is(.sidebar-brand img,.desk-mobile-brand img){mix-blend-mode:normal;filter:brightness(.48)}
+html[data-owner-theme="light"] .owner-desk :is(.status-confirmed,.status-completed){color:var(--success)}
+html[data-owner-theme="light"] .owner-desk :is(.form-error,.notification-settings-message.is-error){color:var(--danger)}
+html[data-owner-theme="light"] .owner-desk :is(.payment-center-page,.communications-page){--payment-gold:var(--desk-gold);--payment-line:var(--line)}
+html[data-owner-theme="light"] .owner-desk :is(.payment-record,.payment-record dl div,.customer-card,.month-calendar,.calendar-grid,.calendar-day,.dispatch-month,.dispatch-day,.upcoming-rides,.mobile-month-agenda,.mileage-panel,.communications-card,.communications-previews details){background:var(--panel);border-color:var(--line)}
+html[data-owner-theme="light"] .owner-desk :is(.payment-lane-rail strong,.payment-record>header>b,.payment-record dd,.customer-card h2,.customer-card h3,.dispatch-appointment-heading,.dispatch-appointment-time,.dispatch-route strong,.day-number,.dispatch-month-toggle,.dispatch-dates button,.dispatch-month-toolbar button){color:var(--ink)}
+html[data-owner-theme="light"] .owner-desk :is(.payment-provider-state,.payment-lane-rail span,.payment-lane-rail small,.payment-boundary span,.payment-record>header span small,.payment-guest span,.payment-record dt,.payment-completeness,.payment-source-note,.dispatch-weekdays,.dispatch-route span,.dispatch-calendar-key,.customer-card p,.customer-card small,.communications-history small,.communications-boundary span,.communications-previews summary small){color:var(--muted)}
+html[data-owner-theme="light"] .owner-desk :is(.dispatch-dates button.is-selected,.dispatch-dates button[aria-pressed="true"]){background:var(--desk-gold);color:#fff}
+html[data-owner-theme="light"] .owner-desk .completeness-complete_for_display{color:var(--success)}
+html[data-owner-theme="light"] .owner-desk :is(.nav-unread-badge,.tool-unread-badge,.desk-bell-count){color:#fff}
+html[data-owner-theme="light"] .owner-desk :is(.touch-request-row,.touch-request-route p,.detail-trip-facts dd,.owner-note-history p){color:var(--ink)}
+html[data-owner-theme="light"] .owner-desk :is(.touch-request-route span,.touch-request-received,.detail-trip-facts dt,.owner-note-history time,.note-help,.secondary-operations>summary){color:var(--muted)}
+html[data-owner-theme="light"] .owner-desk .decision-actions .decline-quiet{color:#a63029;background:#fff;border-color:#d9a39e}
+.desk-settings-sections{display:flex;gap:24px;overflow-x:auto;border-bottom:1px solid var(--desk-rule);margin-bottom:30px}
+.desk-settings-sections button{display:flex;align-items:center;gap:8px;flex-shrink:0;min-height:50px;padding:10px 0;border:0;border-bottom:2px solid transparent;background:transparent;color:var(--muted);font-size:14px;cursor:pointer}
+.desk-settings-sections button[aria-pressed="true"]{border-bottom-color:var(--desk-gold);color:var(--ink)}
+.desk-settings-sections svg{width:17px;height:17px}
+.desk-settings-content{min-width:0}.desk-settings-content h2{font:500 22px/1.3 "DM Sans",sans-serif;letter-spacing:-.025em;margin:0 0 16px}
+.desk-settings-help{color:var(--muted);font-size:14px;line-height:1.6;max-width:560px}
+.desk-account-facts{margin:0;max-width:680px}.desk-account-facts>div{padding:20px 0;border-bottom:1px solid var(--desk-rule);display:grid;grid-template-columns:160px 1fr;gap:18px}.desk-account-facts dt{color:var(--muted);font-size:14px}.desk-account-facts dd{margin:0;font-size:14px;overflow-wrap:anywhere}
+.desk-theme-choices{display:flex;gap:12px;flex-wrap:wrap;border:0;padding:12px 0;margin:0}.desk-theme-choice{display:flex;align-items:center;gap:10px;min-height:64px;padding:14px 20px;border:1px solid var(--line);border-radius:12px;cursor:pointer;background:var(--panel);font-size:14px}.desk-theme-choice.is-selected{border-color:var(--desk-gold)}.desk-theme-choice input{width:18px;height:18px;margin:0;accent-color:var(--desk-gold)}.desk-theme-choice svg{width:20px;height:20px;color:var(--desk-gold)}
+.owner-desk .desk-settings-embedded>.page{padding:0;max-width:none}.desk-settings-embedded .notification-settings-page>.page-head,.desk-settings-embedded .dispatch-calendar-settings>.page-head,.desk-settings-embedded .dispatch-calendar-settings>.dispatch-back{display:none}
+@media(max-width:600px){.desk-settings-sections{gap:20px;margin-bottom:24px}.desk-settings-sections button{font-size:13px}.desk-settings-sections svg{display:none}.desk-account-facts>div{grid-template-columns:1fr;gap:7px}.desk-theme-choices{gap:8px}.desk-theme-choice{padding:14px 12px;gap:7px;flex:1;justify-content:center}.desk-theme-choice svg{display:none}}
+
+/* Light mode is an operating surface, not a stack of white cards. These rules
+   deliberately come after the legacy palette so nested sections remain one
+   coherent work sheet on both desktop and a phone. */
+html[data-owner-theme="light"] .owner-desk .detail-page :is(.detail-card,.control-card,.timeline-card){background:transparent;border:0;border-radius:0;box-shadow:none}
+html[data-owner-theme="light"] .owner-desk .detail-page .detail-flow{gap:0;max-width:960px}
+html[data-owner-theme="light"] .owner-desk .detail-page .detail-flow>section{padding:25px 0}
+html[data-owner-theme="light"] .owner-desk .detail-page .detail-flow>.decision-card{padding:0 0 24px;margin-bottom:5px;border-bottom:1px solid var(--line)}
+html[data-owner-theme="light"] .owner-desk .detail-page .detail-flow>.notes-card{padding-top:24px}
+html[data-owner-theme="light"] .owner-desk .detail-page .secondary-operations{border-color:var(--line)}
+html[data-owner-theme="light"] .owner-desk .detail-trip-facts{border:0}
+html[data-owner-theme="light"] .owner-desk .detail-trip-facts>div{border:0;background:transparent}
+html[data-owner-theme="light"] .owner-desk .detail-received{color:var(--muted)}
+html[data-owner-theme="light"] .owner-desk .availability-page :is(.workflow-card,.availability-week){padding:0;background:transparent;border:0;border-radius:0;box-shadow:none}
+html[data-owner-theme="light"] .owner-desk .availability-page .availability-editor{padding:0 0 26px;border-bottom:1px solid var(--line)}
+html[data-owner-theme="light"] .owner-desk .availability-page .availability-week{padding-top:0}
+html[data-owner-theme="light"] .owner-desk .availability-page .availability-day{background:transparent;border-radius:0;border-top:1px solid var(--line)}
+html[data-owner-theme="light"] .owner-desk .availability-page .availability-day>header{border-color:var(--line)}
+html[data-owner-theme="light"] .owner-desk .availability-page .schedule-block{background:#7857210d}
+html[data-owner-theme="light"] .owner-desk .availability-page .block-unavailable{background:#a6302910}
+html[data-owner-theme="light"] .owner-desk .availability-page .block-available{background:#28644110}
+html[data-owner-theme="light"] .owner-desk .manual-ride-page :is(.workflow-card,.manual-review-list article){background:transparent;border:0;border-radius:0;box-shadow:none}
+html[data-owner-theme="light"] .owner-desk .manual-ride-page .manual-ride-form{padding:0 0 28px;border-bottom:1px solid var(--line)}
+html[data-owner-theme="light"] .owner-desk .manual-ride-page .manual-review{padding:0}
+html[data-owner-theme="light"] .owner-desk .manual-ride-page .manual-review-list article{padding:18px 0;border-top:1px solid var(--line)}
+html[data-owner-theme="light"] .owner-desk .manual-ride-page .manual-review-list article:first-child{border-top:0}
+html[data-owner-theme="light"] .owner-desk .manual-ride-page .manual-review-list dl>div{background:#edf1f3}
+html[data-owner-theme="light"] .owner-desk .insights-page .insights-card{padding:22px 0;background:transparent;border:0;border-top:1px solid var(--line);border-radius:0;box-shadow:none}
+html[data-owner-theme="light"] .owner-desk .insights-page .insights-card:first-child{border-top:0;padding-top:4px}
+html[data-owner-theme="light"] .owner-desk .insights-page .insights-funnel section,html[data-owner-theme="light"] .owner-desk .insights-page .insights-completeness section{background:#edf1f3}
+
+/* A compact, stable request header. The received time belongs beside the
+   request identity, while service, date, and pickup time remain a short stack. */
+.owner-desk .detail-title-row{display:flex;align-items:flex-end;justify-content:space-between;gap:20px}.owner-desk .detail-received{display:grid;justify-items:end;gap:3px;margin:0;color:#aaa59b;font-size:12px;line-height:1.35;white-space:nowrap}.owner-desk .detail-received span{font-size:10px;font-weight:600;letter-spacing:.045em;text-transform:uppercase}.owner-desk .detail-trip-facts{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 28px;margin:16px 0 0;border:0}.owner-desk .detail-trip-facts>div,.owner-desk .detail-trip-facts>div:first-child{padding:0;border:0;background:transparent}.owner-desk .detail-trip-facts dt{font-size:10px;font-weight:600;letter-spacing:.045em}.owner-desk .detail-trip-facts dd{margin-top:4px;font-size:14px;font-weight:500}.owner-desk .detail-page .detail-card,.owner-desk .detail-page .control-card,.owner-desk .detail-page .timeline-card{border-color:var(--desk-rule)}.owner-desk .detail-page .detail-flow>section{padding:25px 0}.owner-desk .detail-page .route-card{padding-top:18px}.owner-desk .detail-page .guest-card,.owner-desk .detail-page .quote-card,.owner-desk .detail-page .notes-card{background:transparent}.owner-desk .detail-page .card-title{margin-bottom:15px}.owner-desk .detail-page .guest-card .facts{margin-top:16px}.owner-desk .detail-page .notes-card label{display:grid;gap:6px}.owner-desk .detail-page .notes-card textarea{margin-top:3px}.owner-desk .detail-page .decision-card{position:static}.owner-desk .detail-page .decision-actions{margin-top:16px}
+@media(max-width:680px){.owner-desk .detail-title-row{align-items:flex-start;gap:12px}.owner-desk .detail-received{justify-items:start;align-self:flex-end;font-size:11px}.owner-desk .detail-trip-facts{grid-template-columns:1fr;gap:8px;margin-top:14px}.owner-desk .detail-trip-facts>div{display:grid;grid-template-columns:92px minmax(0,1fr);gap:10px;align-items:baseline}.owner-desk .detail-trip-facts dd{margin:0}.owner-desk .detail-page .detail-flow>section{padding:21px 0}.owner-desk .detail-page .detail-flow>.decision-card{padding-bottom:22px}.owner-desk .availability-page .availability-layout{gap:28px}.owner-desk .availability-page .availability-week{padding-top:0}.owner-desk .availability-page .availability-day{min-height:0}.owner-desk .manual-ride-page .manual-ride-layout{gap:30px}.owner-desk .manual-ride-page .manual-review{padding-top:0}.owner-desk .insights-page .insights-card{padding:20px 0}.owner-desk .insights-page .insights-layout{gap:0}}
+@media(max-width:390px){.owner-desk .detail-title-row{display:block}.owner-desk .detail-received{margin-top:10px}.owner-desk .detail-trip-facts>div{grid-template-columns:82px minmax(0,1fr)}}
+
+/* Dad's working view is a short, readable sheet, not a stack of dashboard
+   tiles. Keep these rules theme-neutral so the same request hierarchy holds
+   in light, dark, and system mode. */
+.owner-desk .detail-page .detail-trip-facts{display:grid;grid-template-columns:1fr;gap:7px;margin:15px 0 0;border:0}
+.owner-desk .detail-page .detail-trip-facts>div,.owner-desk .detail-page .detail-trip-facts>div:first-child{display:grid;grid-template-columns:96px minmax(0,1fr);gap:12px;align-items:baseline;padding:0;border:0;background:transparent}
+.owner-desk .detail-page .detail-trip-facts dd{margin:0;font-size:14px;font-weight:500}
+.owner-desk .detail-page :is(.route-card,.guest-card,.quote-card,.notes-card,.decision-card){background:transparent;box-shadow:none;border-inline:0;border-radius:0}
+.owner-desk .detail-page .decision-actions{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px;margin-top:15px}
+.owner-desk .detail-page .decision-actions:has(> :only-child){grid-template-columns:1fr!important}
+.owner-desk .detail-page .decision-actions :is(.button,.decline-quiet){width:100%!important;min-height:48px;border-radius:12px;justify-content:center}
+.owner-desk .detail-page .quote-card .manual-quote-draft .facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 18px;margin:0}
+.owner-desk .detail-page .quote-card .manual-quote-draft .facts>div{padding:0;background:transparent;border:0}
+.owner-desk .detail-page .quote-card .payment-note{padding:0;background:transparent;border-radius:0}
+@media(max-width:680px){.owner-desk .detail-page .detail-trip-facts>div,.owner-desk .detail-page .detail-trip-facts>div:first-child{grid-template-columns:88px minmax(0,1fr)}.owner-desk .detail-page .quote-card .manual-quote-draft .facts{grid-template-columns:1fr 1fr;gap:10px}.owner-desk .detail-page .decision-actions :is(.button,.decline-quiet){font-size:13px;padding-inline:6px}}
+
+/* Light mode needs to read like a working desk, not a field of pale cards.
+   Keep the next ride as the one deliberate focal surface and turn the rest
+   into tappable, ruled rows. */
+html[data-owner-theme="light"] .owner-desk .desk-next{background:linear-gradient(145deg,#ffffff,#f1f4f5);border-color:var(--line);box-shadow:0 10px 28px #2a36380f,inset 0 1px 0 #fff}
+html[data-owner-theme="light"] .owner-desk .desk-day-summary{gap:0;border-block:1px solid var(--line)}
+html[data-owner-theme="light"] .owner-desk .desk-day-summary>a{padding:15px 12px;background:transparent;border:0;border-radius:0}
+html[data-owner-theme="light"] .owner-desk .desk-day-summary>a+a{border-left:1px solid var(--line)}
+html[data-owner-theme="light"] .owner-desk .desk-shortcuts{gap:0;border-top:1px solid var(--line)}
+html[data-owner-theme="light"] .owner-desk .desk-shortcuts>a{min-height:62px;padding:14px 4px;background:transparent;border:0;border-bottom:1px solid var(--line);border-radius:0}
+html[data-owner-theme="light"] .owner-desk .desk-shortcuts>a:hover{background:#78572108}
+html[data-owner-theme="light"] .owner-desk .touch-request-search{background:var(--panel-hi)}
+html[data-owner-theme="light"] .owner-desk .touch-request-search input{color:var(--ink)}
+html[data-owner-theme="light"] .owner-desk .touch-service-filter select{background:var(--panel);border-color:var(--line);color:var(--ink)}
+html[data-owner-theme="light"] .owner-desk .touch-request-row:hover,html[data-owner-theme="light"] .owner-desk .touch-request-row:active{background:#78572108}
+html[data-owner-theme="light"] .owner-desk .touch-request-route{padding-left:0;border-left:0}
+html[data-owner-theme="light"] .owner-desk .touch-request-row>svg{color:var(--muted)}
+@media(max-width:680px){html[data-owner-theme="light"] .owner-desk .desk-day-summary>a{padding:13px 8px}html[data-owner-theme="light"] .owner-desk .desk-shortcuts{grid-template-columns:1fr}html[data-owner-theme="light"] .owner-desk .desk-shortcuts>a{display:flex;align-items:center;justify-content:space-between;min-height:54px;padding:13px 0}html[data-owner-theme="light"] .owner-desk .desk-shortcuts>a>svg:last-child{display:block}}
+
+/* Owner Desk light mode is a continuous run sheet: one surface, one rhythm.
+   This comes last intentionally so the older feature sheets cannot turn the
+   phone experience back into a collection of unrelated cards. */
+html[data-owner-theme="light"] .owner-desk{
+  --desk-surface:#f7f8f9;
+  --desk-rule:#dde3e6;
+  --desk-gold:#785721;
+  background:var(--desk-surface);
+}
+html[data-owner-theme="light"] .owner-desk .desk-toolbar{
+  background:var(--desk-surface);
+  border-bottom:0;
+  box-shadow:none;
+  backdrop-filter:none;
+}
+html[data-owner-theme="light"] .owner-desk :is(.desk-workspace-label,.desk-today-date,.desk-priority-line small){color:#5c676d}
+html[data-owner-theme="light"] .owner-desk .desk-priority-line{
+  color:#20292d;
+  border-color:var(--desk-rule);
+}
+html[data-owner-theme="light"] .owner-desk .desk-priority-line strong{
+  color:#20292d;
+  font-weight:600;
+}
+html[data-owner-theme="light"] .owner-desk .desk-priority-line svg{color:var(--desk-gold)}
+html[data-owner-theme="light"] .owner-desk .desk-next{
+  background:linear-gradient(145deg,#fff,#f1f4f5);
+  border:1px solid var(--desk-rule);
+  border-radius:20px;
+  box-shadow:0 10px 28px rgb(32 41 45 / 6%),inset 0 1px 0 #fff;
+}
+html[data-owner-theme="light"] .owner-desk :is(.desk-decisions,.desk-run-sheet,.desk-shortcuts){border-color:var(--desk-rule)}
+html[data-owner-theme="light"] .owner-desk .desk-shortcuts{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:0 24px;
+  margin-top:28px;
+  border-top:1px solid var(--desk-rule);
+}
+html[data-owner-theme="light"] .owner-desk .desk-shortcuts>a{
+  min-height:56px;
+  padding:0;
+  border:0;
+  border-bottom:1px solid var(--desk-rule);
+  border-radius:0;
+  background:transparent;
+  color:#20292d;
+  font-size:15px;
+  font-weight:500;
+  box-shadow:none;
+}
+html[data-owner-theme="light"] .owner-desk .desk-shortcuts>a:hover{background:transparent;color:var(--desk-gold)}
+html[data-owner-theme="light"] .owner-desk .desk-shortcuts>a:focus-visible{outline:2px solid var(--desk-gold);outline-offset:-2px}
+html[data-owner-theme="light"] .owner-desk .desk-shortcuts>a>svg:first-child{color:var(--desk-gold)}
+html[data-owner-theme="light"] .owner-desk .desk-shortcuts>a>svg:last-child{color:#5c676d}
+html[data-owner-theme="light"] .owner-desk :is(.detail-page .detail-card,.detail-page .control-card,.detail-page .timeline-card,.guest-profile-page .customer-card){background:transparent;border-radius:0;box-shadow:none}
+html[data-owner-theme="light"] .owner-desk .detail-page .detail-flow>section{border-color:var(--desk-rule)}
+html[data-owner-theme="light"] .owner-desk .owner-note-history{border-color:var(--desk-rule)}
+html[data-owner-theme="light"] .owner-desk .owner-note-history li{border-color:var(--desk-rule)}
+
+@media(max-width:900px){
+  html[data-owner-theme="light"] .owner-desk{padding-bottom:calc(94px + env(safe-area-inset-bottom))}
+  html[data-owner-theme="light"] .owner-desk .page{padding-bottom:36px}
+  html[data-owner-theme="light"] .owner-desk .desk-toolbar{height:68px}
+  html[data-owner-theme="light"] .owner-desk .mobile-nav{
+    inset:auto 12px calc(8px + env(safe-area-inset-bottom));
+    height:64px;
+    padding:5px;
+    border:1px solid rgb(32 41 45 / 12%);
+    border-radius:32px;
+    background:rgb(255 255 255 / 96%);
+    box-shadow:0 10px 30px rgb(32 41 45 / 14%);
+    backdrop-filter:blur(16px);
+  }
+  html[data-owner-theme="light"] .owner-desk .mobile-nav a{
+    min-height:52px;
+    border-radius:26px;
+    color:#5c676d;
+    font-size:10px;
+    font-weight:500;
+  }
+  html[data-owner-theme="light"] .owner-desk .mobile-nav a.active{
+    color:#20292d;
+    background:#78572112;
+  }
+  html[data-owner-theme="light"] .owner-desk .mobile-nav a.active svg{background:transparent;box-shadow:none;color:var(--desk-gold)}
+  html[data-owner-theme="light"] .owner-desk .mobile-nav .nav-unread-badge{
+    top:5px;
+    left:calc(50% + 9px);
+    min-width:17px;
+    width:auto;
+    height:17px;
+    padding:0 4px;
+    border:2px solid #fff;
+    color:#fff;
+    font-size:9px;
+  }
+  html[data-owner-theme="light"] .owner-desk .desk-shortcuts{grid-template-columns:1fr}
+  html[data-owner-theme="light"] .owner-desk .desk-shortcuts>a{min-height:54px;padding:0;font-size:15px}
+}
+@media(max-width:360px){
+  html[data-owner-theme="light"] .owner-desk .mobile-nav{inset-inline:8px}
+  html[data-owner-theme="light"] .owner-desk .mobile-nav a{font-size:9px}
+}
+@media(prefers-reduced-transparency:reduce){
+  html[data-owner-theme="light"] .owner-desk .mobile-nav{background:#fff;backdrop-filter:none}
+}

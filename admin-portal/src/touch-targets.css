@@ -1,0 +1,4 @@
+.day-events a{min-height:44px}
+.back-link{min-height:44px}
+@media(max-width:680px){.request-action{min-height:44px}.request-row-actions .row-link{width:100%;height:auto;min-height:46px}.mobile-nav a{min-height:58px;font-size:.56rem}}
+@media(max-width:360px){.calendar-toolbar>div button{flex:0 0 44px;width:44px;height:44px}.calendar-toolbar>.button{min-height:44px}}

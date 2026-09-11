@@ -1,0 +1,15 @@
+import { KeyRound, LockKeyhole, Route, ShieldCheck } from 'lucide-react';
+import { useState } from 'react';
+import { Navigate, useSearchParams } from 'react-router-dom';
+import { pxpressLogo } from '../brand';
+import { useAuth } from '../auth';
+import { safeOwnerMfaReturnPath } from '../features/email-center/mfa-return';
+
+export function Login(){
+  const {user,configured,signIn,authError,retryAuth,loading}=useAuth();
+  const [searchParams]=useSearchParams(),returnTo=safeOwnerMfaReturnPath(searchParams.get('returnTo'));
+  const [email,setEmail]=useState(''),[password,setPassword]=useState(''),[error,setError]=useState(''),[busy,setBusy]=useState(false);
+  if(user)return <Navigate to={returnTo} replace/>;
+  async function submit(e:React.FormEvent){e.preventDefault();setBusy(true);setError('');setError(await signIn(email,password)||'');setBusy(false)}
+  return <main className="login-page"><a className="skip-link" href="#owner-login">Skip to owner sign in</a><section className="login-brand" aria-labelledby="login-brand-title"><img className="login-logo" src={pxpressLogo} alt="Pxpress"/><div className="login-brand-copy"><p className="eyebrow">Private transportation · Private operations</p><h1 id="login-brand-title">Every ride,<br/><em>under control.</em></h1><p>One quiet workspace for the requests, quotes, schedules, guests, and decisions behind Pxpress.</p></div><div className="login-capabilities" aria-label="Owner desk capabilities"><span><Route aria-hidden/>Ride requests</span><span><ShieldCheck aria-hidden/>Protected records</span><span><LockKeyhole aria-hidden/>Owner-only access</span></div></section><section className="login-panel" id="owner-login"><div className="login-copy"><p className="eyebrow">Raishawn’s private owner desk</p><h2>Welcome back, Raishawn.</h2><p>Sign in to review today’s rides and the decisions waiting for you.</p></div>{!configured&&<div className="config-warning" role="alert"><strong>Owner desk is not connected</strong><span>The private server connection must be completed before sign-in is available.</span></div>}{authError&&<div className="config-warning" role="alert"><strong>Owner sign-in could not be checked</strong><span>{authError}</span><button type="button" className="button secondary" onClick={()=>void retryAuth()} disabled={loading}>{loading?'Checking…':'Try security check again'}</button></div>}<form onSubmit={submit}><label>Email address<input type="email" value={email} onChange={e=>setEmail(e.target.value)} autoComplete="username" required disabled={!configured||Boolean(authError)}/></label><label>Password<input type="password" value={password} onChange={e=>setPassword(e.target.value)} autoComplete="current-password" required disabled={!configured||Boolean(authError)}/></label>{error&&<p className="form-error" role="alert">{error}</p>}<button className="button primary" disabled={!configured||Boolean(authError)||busy}><KeyRound aria-hidden/>{busy?'Signing in…':'Enter owner desk'}</button></form><small className="privacy-note"><LockKeyhole aria-hidden/> Private owner access only. No public registration.</small></section></main>;
+}

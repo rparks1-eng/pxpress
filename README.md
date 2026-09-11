@@ -4,10 +4,10 @@ Private project repository for PXPress.
 
 ## Current boundary
 
-Code has not been imported yet. The canonical PXPress working tree remains separate while its active release, ownership, source-selection, integration, QA, and rollback checks are completed.
+This first source import contains the Owner Desk frontend and the shared modules it imports. It is not a complete deployment package: the public cinematic site, backend deployments, migrations, provider configuration, and operational records remain outside this import.
 
 This repository intentionally contains no credentials, environment files, customer data, private transcripts, provider exports, generated build output, or copied task evidence.
 
 ## Next step
 
-An existing PXPress source owner must supply an accepted, exact source manifest after secret/customer/environment, generated-artifact, nested-Git, active-writer, integration, QA, and deployment-trigger review. Only then may a coherent reviewed source import be proposed.
+Review this source import on its branch before merging. No deployment workflow is included. Build the frontend from `admin-portal` using its committed lockfile. Production requires separately managed environment configuration, backend services, and the verified transparent logo asset; a successful build does not prove payment or email readiness.
